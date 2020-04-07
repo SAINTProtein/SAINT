@@ -69,7 +69,8 @@ def read_pccp(fname,seq):
 def getProtlist(inputlist):
     with open(inputlist,'r') as f:
         protlist = f.read().split('\n')
-    protlist.remove('') #if there is any blank line in input file
+    if '' in protlist:
+        protlist.remove('') #if there is any blank line in input file
     return protlist
 
 
