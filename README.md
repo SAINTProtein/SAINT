@@ -8,10 +8,10 @@ If you use any part of this repository, we shall be obliged if you site our pape
 
 ## Download pretrained-model weights:
 1. Please download all the pretrained model weights from [here](https://drive.google.com/open?id=1mjXUfz33asJHBorEeMU0kd1A-1WChRyR) (4 weight-files for 4 single-models).
-2. Please these four weight-files in the folder "SAINT".
+2. Place these four weight-files in the folder "SAINT".
 
 ## Input Features
-To store input features, navigate to the folder SAINT. Then follow any of the following two options:
+To store input-features, navigate to the folder SAINT. Then follow any of the following two options:
 ### Option-1
 1. List all the protein-names in the file: list_test
 
@@ -21,9 +21,9 @@ To store input features, navigate to the folder SAINT. Then follow any of the fo
 1. If you have a list of proteins in a text file (each in a new line. Last line of the file is a blank line) and a folder containing the FASTA, PSSM, HHM, and Spotcon files of these proteins, you can simply set their path in SAINT/config.py file.
 
 ## Run inference to predict secondary structures
-1. From command line cd to SAINT folder (where SAINT_ensemble.py is situated).
+1. From command line cd to "SAINT" folder (where SAINT_ensemble.py is situated).
 
-2. IN order to run inference with our complete SAINT (ensemble), please run the following command:
+2. In order to run inference with our complete SAINT (ensemble), please run the following command:
 
   > python SAINT_ensemble.py
   
