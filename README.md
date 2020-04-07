@@ -28,4 +28,4 @@ To store input features, navigate to the folder SAINT. Then follow any of the fo
 	Contact Window size 10: SAINT_cwin10_output_ss8_sequences.txt
 	Contact Window size 20: SAINT_cwin20_output_ss8_sequences.txt
 	Contact Window size 50: SAINT_cwin50_output_ss8_sequences.txt
- 2. Each new line contains PSS for each protein in the above-mentioned list (in the same serial).
+ 2. Each new line contains PSS for each protein in the above-mentioned list (in the same order).
