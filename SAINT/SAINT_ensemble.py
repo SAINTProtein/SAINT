@@ -791,19 +791,19 @@ def getProtlist(inputlist):
 protlist = getProtlist(inputlist=config.inputlist)
 
 for i, prot_name in enumerate(protlist):
-    with open('outputs/ensemble/{}.SAINT_Ensemble.ss8'.format(prot_name), 'w') as f:
+    with open('outputs//{}.SAINT_Ensemble.ss8'.format(prot_name), 'w') as f:
         f.write(ss8_string[i])
         
-    with open('outputs/cwin0/{}.SAINT_cwin0.ss8'.format(prot_name), 'w') as f:
+    with open('outputs/{}.SAINT_cwin0.ss8'.format(prot_name), 'w') as f:
         f.write(ss8_win0_string[i])
         
-    with open('outputs/cwin10/{}.SAINT_cwin10.ss8'.format(prot_name), 'w') as f:
+    with open('outputs/{}.SAINT_cwin10.ss8'.format(prot_name), 'w') as f:
         f.write(ss8_win10_string[i])
         
-    with open('outputs/cwin20/{}.SAINT_cwin20.ss8'.format(prot_name), 'w') as f:
+    with open('outputs/{}.SAINT_cwin20.ss8'.format(prot_name), 'w') as f:
         f.write(ss8_win20_string[i])
         
-    with open('outputs/cwin50/{}.SAINT_cwin50.ss8'.format(prot_name), 'w') as f:
+    with open('outputs/{}.SAINT_cwin50.ss8'.format(prot_name), 'w') as f:
         f.write(ss8_win50_string[i])
         
 

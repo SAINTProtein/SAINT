@@ -557,7 +557,7 @@ def getProtlist(inputlist):
 protlist = getProtlist(inputlist=config.inputlist)
 
 for i, prot_name in enumerate(protlist)
-    with open('outputs/cwin0/{}.SAINT_cwin0.ss8'.format(prot_name), 'w') as f:
+    with open('outputs/{}.SAINT_cwin0.ss8'.format(prot_name), 'w') as f:
         f.write(ss8_win0_string[i])
 
 
