@@ -27,15 +27,15 @@ To store input-features, navigate to the folder SAINT. Then follow any of the fo
 
   > python SAINT_ensemble.py
   
-3. If you want to run inference only with the PSSM, HHM, and Physical-Property features (Without SpotCon), please run the following command:
+3. If you want to run inference only with the FASTA, PSSM, and HHM (Without SpotCon), please run the following command:
 
   > python SAINT_single_base_model.py
   
 # Output format
 1. The predicted outout sequences will be saved in the following files in the "SAINT/outputs" folder:  
-	-*Ensemble*: SAINT_Ensemble_output_ss8_sequences.txt  
-	-*No Contact-Map*: SAINT_cwin0_output_ss8_sequences.txt  
-	-*Contact Window size 10*: SAINT_cwin10_output_ss8_sequences.txt  
-	-*Contact Window size 20*: SAINT_cwin20_output_ss8_sequences.txt  
-	-*Contact Window size 50*: SAINT_cwin50_output_ss8_sequences.txt  
- 2. Each new line contains Protein 8 state secondary structure for each protein in the above-mentioned list (in the same order).
+	-*Ensemble*: *<Protein_Name>*.SAINT_Ensemble.ss8  
+	-*No Contact-Map*: *<Protein_Name>*.SAINT_cwin0.ss8 
+	-*Contact Window size 10*: *<Protein_Name>*.SAINT_cwin10.ss8  
+	-*Contact Window size 20*: *<Protein_Name>*.SAINT_cwin20.ss8  
+	-*Contact Window size 50*: *<Protein_Name>*.SAINT_cwin50.ss8  
+ 2. Hence *<Protein_Name>* indicates the protein names given in the *list_test* file. Similar Outputs will be generated for all the proteins mentioned in the list.  
