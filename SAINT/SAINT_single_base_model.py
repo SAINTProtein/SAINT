@@ -540,8 +540,26 @@ for i in range(ss8_win0.shape[0]):
         ss8_win0_string += _structures_[ss8_win0[i, j]]
     ss8_win0_string += '\n'
 
+"""
 with open('outputs/SAINT_cwin0_output_ss8_sequences.txt', 'w') as f:
     f.write(ss8_win0_string)
+"""
+
+ss8_win0_string = ss8_win0_string.split('\n')
+
+def getProtlist(inputlist):
+    with open(inputlist,'r') as f:
+        protlist = f.read().split('\n')
+    if '' in protlist:
+        protlist.remove('') #if there is any blank line in input file
+    return protlist
+    
+protlist = getProtlist(inputlist=config.inputlist)
+
+for i, prot_name in enumerate(protlist)
+    with open('outputs/cwin0/{}.SAINT_cwin0.ss8'.format(prot_name), 'w') as f:
+        f.write(ss8_win0_string[i])
+
 
 print('Total time for script (SAINT_single_base):', time() - t_init)
 

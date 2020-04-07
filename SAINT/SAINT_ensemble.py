@@ -757,6 +757,7 @@ for i in range(avg.shape[0]):
     ss8_win20_string += '\n'
     ss8_win50_string += '\n'
 
+"""
 with open('outputs/SAINT_Ensemble_output_ss8_sequences.txt', 'w') as f:
     f.write(ss8_string)
     
@@ -771,8 +772,43 @@ with open('outputs/SAINT_cwin20_output_ss8_sequences.txt', 'w') as f:
     
 with open('outputs/SAINT_cwin50_output_ss8_sequences.txt', 'w') as f:
     f.write(ss8_win50_string)
+"""
     
-print('Total time for script:', time() - t_init, greater_than_700_dict)
+ss8_string = ss8_string.split('\n')
+ss8_win0_string = ss8_win0_string.split('\n')
+ss8_win10_string = ss8_win10_string.split('\n')
+ss8_win20_string = ss8_win20_string.split('\n')
+ss8_win50_string = ss8_win50_string.split('\n')
+
+
+def getProtlist(inputlist):
+    with open(inputlist,'r') as f:
+        protlist = f.read().split('\n')
+    if '' in protlist:
+        protlist.remove('') #if there is any blank line in input file
+    return protlist
+    
+protlist = getProtlist(inputlist=config.inputlist)
+
+for i, prot_name in enumerate(protlist):
+    with open('outputs/ensemble/{}.SAINT_Ensemble.ss8'.format(prot_name), 'w') as f:
+        f.write(ss8_string[i])
+        
+    with open('outputs/cwin0/{}.SAINT_cwin0.ss8'.format(prot_name), 'w') as f:
+        f.write(ss8_win0_string[i])
+        
+    with open('outputs/cwin10/{}.SAINT_cwin10.ss8'.format(prot_name), 'w') as f:
+        f.write(ss8_win10_string[i])
+        
+    with open('outputs/cwin20/{}.SAINT_cwin20.ss8'.format(prot_name), 'w') as f:
+        f.write(ss8_win20_string[i])
+        
+    with open('outputs/cwin50/{}.SAINT_cwin50.ss8'.format(prot_name), 'w') as f:
+        f.write(ss8_win50_string[i])
+        
+
+
+print('Total time for script:', time() - t_init)#, greater_than_700_dict)
 
 
 # In[ ]:
