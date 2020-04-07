@@ -33,9 +33,9 @@ To store input-features, navigate to the folder SAINT. Then follow any of the fo
   
 # Output format
 1. The predicted outout sequences will be saved in the following files in the "SAINT/outputs" folder:  
-	-Ensemble: SAINT_Ensemble_output_ss8_sequences.txt  
-	-Contact Window size 0: SAINT_cwin0_output_ss8_sequences.txt  
-	-Contact Window size 10: SAINT_cwin10_output_ss8_sequences.txt  
-	-Contact Window size 20: SAINT_cwin20_output_ss8_sequences.txt  
-	-Contact Window size 50: SAINT_cwin50_output_ss8_sequences.txt  
+	-*Ensemble*: SAINT_Ensemble_output_ss8_sequences.txt  
+	-*No Contact-Map*: SAINT_cwin0_output_ss8_sequences.txt  
+	-*Contact Window size 10*: SAINT_cwin10_output_ss8_sequences.txt  
+	-*Contact Window size 20*: SAINT_cwin20_output_ss8_sequences.txt  
+	-*Contact Window size 50*: SAINT_cwin50_output_ss8_sequences.txt  
  2. Each new line contains Protein 8 state secondary structure for each protein in the above-mentioned list (in the same order).
