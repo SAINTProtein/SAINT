@@ -672,7 +672,7 @@ ss8_win20_ = np.argmax(ss8_win20, axis=-1)
 ss8_win50_ = np.argmax(ss8_win50, axis=-1)
 
 
-_structures_ = 'LBEGIHSTX' # 'X' represents NoSeq, will not be in the ss8_string
+_structures_ = 'CBEGIHSTX' # 'X' represents NoSeq, will not be in the ss8_string
 
 ss8_win0_string = ''
 ss8_win10_string = ''
@@ -681,7 +681,6 @@ ss8_win50_string = ''
 ss8_string = ''
 
 greater_than_700_dict = lengths[0][2]
-flag = 0
 skip_cnt = 0
 
 for i in range(avg.shape[0]):
@@ -704,11 +703,11 @@ for i in range(avg.shape[0]):
         temp_ss8_win20[:700, :] = ss8_win20[i]
         temp_ss8_win50[:700, :] = ss8_win50[i]
         
-        temp_ss8[700:, :] += avg[i+1, -(greater_than_700_dict[i][1]-700):]
-        temp_ss8_win0[700:, :] += ss8_win0[i+1, -(greater_than_700_dict[i][1]-700):]
-        temp_ss8_win10[700:, :] += ss8_win10[i+1, -(greater_than_700_dict[i][1]-700):]
-        temp_ss8_win20[700:, :] += ss8_win20[i+1, -(greater_than_700_dict[i][1]-700):]
-        temp_ss8_win50[700:, :] += ss8_win50[i+1, -(greater_than_700_dict[i][1]-700):]
+        temp_ss8[-700:, :] += avg[i+1]#, -(greater_than_700_dict[i][1]-700):]
+        temp_ss8_win0[-700:, :] += ss8_win0[i+1]#, -(greater_than_700_dict[i][1]-700):] #ekhane mainy [i+1, -18:] eta hocche
+        temp_ss8_win10[-700:, :] += ss8_win10[i+1]#, -(greater_than_700_dict[i][1]-700):]
+        temp_ss8_win20[-700:, :] += ss8_win20[i+1]#, -(greater_than_700_dict[i][1]-700):]
+        temp_ss8_win50[-700:, :] += ss8_win50[i+1]#, -(greater_than_700_dict[i][1]-700):]
         
         temp_ss8 = temp_ss8_win0 + temp_ss8_win10 + temp_ss8_win20 + temp_ss8_win50
         temp_ss8 /= 4
@@ -742,6 +741,7 @@ for i in range(avg.shape[0]):
         
     if skip_cnt > 0:
         skip_cnt -= 1
+        #print('\n\nskip_cnt: %s \n\n'%skip_cnt)
         continue
     if lengths[0][0][i] > 700:
         raise Exception
@@ -789,6 +789,7 @@ def getProtlist(inputlist):
     return protlist
     
 protlist = getProtlist(inputlist=config.inputlist)
+print('\n\nTotal number of proteins:', len(protlist))
 
 for i, prot_name in enumerate(protlist):
     with open('outputs//{}.SAINT_Ensemble.ss8'.format(prot_name), 'w') as f:

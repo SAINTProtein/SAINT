@@ -454,7 +454,7 @@ t0 = time()
 base_dataset = [None] # generateBaseDataset(inputlist,inputdir) # Dimension = N x 700 x 57
 lengths = [None] # generateLengthlist(inputlist,inputdir)
 
-if True:
+if True: #(with multi-threading)
     from threading import Thread
 
     t1 = Thread(target=generateBaseDataset, args=(base_dataset, inputlist, inputdir)) 
@@ -468,7 +468,7 @@ if True:
 
     print("Done!")
 
-elif False:
+elif False: #(without multi-threading)
     generateBaseDataset(base_dataset, inputlist,inputdir) # Dimension = N x 700 x 57
     generateLengthlist(lengths, inputlist,inputdir)
 
@@ -528,16 +528,39 @@ print('Inference_time:', time()-t2)
 
 
 # t000 = time()
-ss8_win0 = np.argmax(ss8_win0, axis=-1)
+ss8_win0_ = np.argmax(ss8_win0, axis=-1)
 
 
-_structures_ = 'LBEGIHSTX' # 'X' represents NoSeq, will not be in the ss8_string
+_structures_ = 'CBEGIHSTX' # 'X' represents NoSeq, will not be in the ss8_string
 
 ss8_win0_string = ''
+greater_than_700_dict = lengths[0][2]
+skip_cnt = 0
 
 for i in range(ss8_win0.shape[0]):
+    if i in greater_than_700_dict:
+        if greater_than_700_dict[i][1] >= 1400:
+            print(greater_than_700_dict[i][1])
+            raise Exception
+        skip_cnt = greater_than_700_dict[i][0]
+        temp_ss8_win0 = np.zeros([greater_than_700_dict[i][1], ss8_win0.shape[2]])
+        temp_ss8_win0[:700, :] = ss8_win0[i]
+        temp_ss8_win0[-700:, :] += ss8_win0[i + 1]
+        temp_ss8_win0 = np.argmax(temp_ss8_win0, axis=-1)
+        print('temp_ss8_win0.shape:', temp_ss8_win0.shape)
+        for j in range(temp_ss8_win0.shape[0]):
+            ss8_win0_string += _structures_[temp_ss8_win0[j]]
+        ss8_win0_string += '\n'
+
+    if skip_cnt > 0:
+        skip_cnt -= 1
+        # print('\n\nskip_cnt: %s \n\n'%skip_cnt)
+        continue
+    if lengths[0][0][i] > 700:
+        raise Exception
+
     for j in range(int(lengths[0][0][i])):
-        ss8_win0_string += _structures_[ss8_win0[i, j]]
+        ss8_win0_string += _structures_[ss8_win0_[i, j]]
     ss8_win0_string += '\n'
 
 """
@@ -556,7 +579,7 @@ def getProtlist(inputlist):
     
 protlist = getProtlist(inputlist=config.inputlist)
 
-for i, prot_name in enumerate(protlist)
+for i, prot_name in enumerate(protlist):
     with open('outputs/{}.SAINT_cwin0.ss8'.format(prot_name), 'w') as f:
         f.write(ss8_win0_string[i])
 
