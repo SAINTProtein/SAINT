@@ -34,7 +34,7 @@ To store input-features, navigate to the folder SAINT. Then follow any of the fo
 # Output format
 1. The predicted outout sequences will be saved in the following files in the "SAINT/outputs" folder:   
 
-	| Model-type | pattern of output-file names |
+	| Model-type | Pattern of output-files' names |
 	| ---------- |:--------------------------------------:|
 	|*Ensemble*| *<Protein_Name>*.SAINT_Ensemble.ss8    |
 	|*No Contact-Map*| *<Protein_Name>*.SAINT_cwin0.ss8    |
