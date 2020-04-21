@@ -38,4 +38,14 @@ To store input-features, navigate to the folder SAINT. Then follow any of the fo
 	-*Contact Window size 10*: *<Protein_Name>*.SAINT_cwin10.ss8   
 	-*Contact Window size 20*: *<Protein_Name>*.SAINT_cwin20.ss8   
 	-*Contact Window size 50*: *<Protein_Name>*.SAINT_cwin50.ss8  
- 2. Hence *<Protein_Name>* indicates the protein names given in the *list_test* file. Similar Outputs will be generated for all the proteins mentioned in the list.  
+ 2. Hence *<Protein_Name>* indicates the protein names given in the *list_test* file. Similar Outputs will be generated for all the proteins mentioned in the list. 
+ 3. The characters in the output files represents the eight states (Q8) like the following: 
+ 	|Character | State|
+ 	|H| α-helix |
+	|G| 3_{10}-helix|
+	|I| π-helix|
+	|E| β-strand|
+	|B| isolated β-bridge|
+	|T| turn|
+	|S| bend |
+	C: Others
