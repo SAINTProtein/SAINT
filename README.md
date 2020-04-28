@@ -7,7 +7,7 @@ If you use any part of this repository, we shall be obliged if you site our pape
 # Usage
 ## Tensorflow and Keras installation
 1. Please install [Tensorflow version: 1.15](https://www.tensorflow.org/install/gpu#older_versions_of_tensorflow). (Other 1.x versions should work, but have not been tested. Tensorflow-gpu version is recommendeed for faster inference.)
-2. Please install [Keras version 2.2.5](https://pypi.org/project/Keras/2.2.5/):
+2. Please install [Keras version: 2.2.5](https://pypi.org/project/Keras/2.2.5/).
 
 ## Download pretrained-model weights:
 1. Please download all the pretrained model weights from [here](https://drive.google.com/open?id=1mjXUfz33asJHBorEeMU0kd1A-1WChRyR) (4 weight-files for 4 single-models).
