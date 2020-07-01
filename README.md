@@ -57,3 +57,6 @@ To store input-features, navigate to the folder SAINT. Then follow any of the fo
 	|T| turn|
 	|S| bend |
 	|C| Others |
+	
+# Citation
+Mostofa Rafid Uddin, Sazan Mahbub, M Saifur Rahman, Md Shamsuzzoha Bayzid, SAINT: Self-Attention Augmented Inception-Inside-Inception Network Improves Protein Secondary Structure Prediction, Bioinformatics, , btaa531, https://doi.org/10.1093/bioinformatics/btaa531
