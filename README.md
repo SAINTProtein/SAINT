@@ -35,15 +35,18 @@ To store input-features, navigate to the folder SAINT. Then follow any of the fo
   > python SAINT_single_base_model.py
   
 # Output format
+1. There are two types of output files. 
+	a. *Predicted Classes:* Contain the predicted classes of the residues (i.e. the most probable secondary structure). The file extension is ".ss8".
+	b. *Predicted Probabilities:* Contain the predicted probabilities of the secondary structures for each of the residues. The file extension is ".ss8_probab".
 1. The predicted outout sequences will be saved in the following files in the "SAINT/outputs" folder:   
 
-	| Model-type | Pattern of output-files' names |
-	| ---------- |:--------------------------------------:|
-	|*Ensemble*| *<Protein_Name>*.SAINT_Ensemble.ss8    |
-	|*No Contact-Map*| *<Protein_Name>*.SAINT_cwin0.ss8    |
-	|*Contact Window size 10*| *<Protein_Name>*.SAINT_cwin10.ss8   |
-	|*Contact Window size 20*| *<Protein_Name>*.SAINT_cwin20.ss8   |
-	|*Contact Window size 50*| *<Protein_Name>*.SAINT_cwin50.ss8  |
+	| Model-type | Pattern of output file-names (Predicted Classes) |  Pattern of output file-names (Predicted Probabilities) |
+	| ---------- |:--------------------------------------:|:--------------------------------------:|
+	|*Ensemble*| *<Protein_Name>*.SAINT_Ensemble.ss8    | *<Protein_Name>*.SAINT_Ensemble.ss8_probab   |
+	|*No Contact-Map*| *<Protein_Name>*.SAINT_cwin0.ss8    | *<Protein_Name>*.SAINT_cwin0.ss8_probab   |
+	|*Contact Window size 10*| *<Protein_Name>*.SAINT_cwin10.ss8   | *<Protein_Name>*.SAINT_cwin10.ss8_probab   |
+	|*Contact Window size 20*| *<Protein_Name>*.SAINT_cwin20.ss8   | *<Protein_Name>*.SAINT_cwin20.ss8_probab   |
+	|*Contact Window size 50*| *<Protein_Name>*.SAINT_cwin50.ss8  | *<Protein_Name>*.SAINT_cwin50.ss8_probab  |
  2. Hence *<Protein_Name>* indicates the protein names given in the *list_test* file. Similar Outputs will be generated for all the proteins mentioned in the list. 
  3. The characters in the output files represent the eight states (Q8) as the following: 
  
