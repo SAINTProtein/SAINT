@@ -683,6 +683,12 @@ ss8_string = ''
 greater_than_700_dict = lengths[0][2]
 skip_cnt = 0
 
+ss8_probab = []
+ss8_win0_probab = []
+ss8_win10_probab = []
+ss8_win20_probab = []
+ss8_win50_probab = []
+
 for i in range(avg.shape[0]):
     if i in greater_than_700_dict:
         if greater_than_700_dict[i][1] >= 1400:
@@ -712,11 +718,17 @@ for i in range(avg.shape[0]):
         temp_ss8 = temp_ss8_win0 + temp_ss8_win10 + temp_ss8_win20 + temp_ss8_win50
         temp_ss8 /= 4
         
-        #temp_ss8[-700:700, :] /= 2
-        #temp_ss8_win0[-700:700, :] /= 2
-        #temp_ss8_win10[-700:700, :] /= 2
-        #temp_ss8_win20[-700:700, :] /= 2
-        #temp_ss8_win50[-700:700, :] /= 2
+        temp_ss8[-700:700, :] /= 2
+        temp_ss8_win0[-700:700, :] /= 2
+        temp_ss8_win10[-700:700, :] /= 2
+        temp_ss8_win20[-700:700, :] /= 2
+        temp_ss8_win50[-700:700, :] /= 2
+        
+        ss8_probab += [temp_ss8]
+        ss8_win0_probab += [temp_ss8_win0]
+        ss8_win10_probab += [temp_ss8_win10]
+        ss8_win20_probab += [temp_ss8_win20]
+        ss8_win50_probab += [temp_ss8_win50]
         
         temp_ss8 = np.argmax(temp_ss8, axis=-1)
         temp_ss8_win0 = np.argmax(temp_ss8_win0, axis=-1)
@@ -751,6 +763,13 @@ for i in range(avg.shape[0]):
         ss8_win10_string += _structures_[ss8_win10_[i, j]]
         ss8_win20_string += _structures_[ss8_win20_[i, j]]
         ss8_win50_string += _structures_[ss8_win50_[i, j]]
+    
+    ss8_probab += [avg[i]]
+    ss8_win0_probab += [ss8_win0[i]]
+    ss8_win10_probab += [ss8_win10[i]]
+    ss8_win20_probab += [ss8_win20[i]]
+    ss8_win50_probab += [ss8_win50[i]]
+    
     ss8_string += '\n'
     ss8_win0_string += '\n'
     ss8_win10_string += '\n'
@@ -806,7 +825,13 @@ for i, prot_name in enumerate(protlist):
         
     with open('outputs/{}.SAINT_cwin50.ss8'.format(prot_name), 'w') as f:
         f.write(ss8_win50_string[i])
-        
+    
+    # probab
+    np.savetxt('outputs//{}.SAINT_Ensemble.ss8_probab'.format(prot_name), ss8_probab[i])
+    np.savetxt('outputs/{}.SAINT_cwin0.ss8_probab'.format(prot_name), ss8_win0_probab[i])
+    np.savetxt('outputs/{}.SAINT_cwin10.ss8_probab'.format(prot_name), ss8_win10_probab[i])
+    np.savetxt('outputs/{}.SAINT_cwin20.ss8_probab'.format(prot_name), ss8_win20_probab[i])
+    np.savetxt('outputs/{}.SAINT_cwin50.ss8_probab'.format(prot_name), ss8_win50_probab[i])
 
 
 print('Total time for script:', time() - t_init)#, greater_than_700_dict)
