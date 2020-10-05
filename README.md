@@ -36,8 +36,8 @@ To store input-features, navigate to the folder SAINT. Then follow any of the fo
   
 # Output format
 1. There are two types of output files: 
-	* a. *Predicted Classes:* Contain the predicted classes of the residues (i.e. the most probable secondary structure). The file extension is ".ss8".
-	* b. *Predicted Probabilities:* Contain the predicted probabilities of the secondary structures for each of the residues. The file extension is ".ss8_probab".
+	- a. *Predicted Classes:* Contain the predicted classes of the residues (i.e. the most probable secondary structure). The file extension is ".ss8".
+	- b. *Predicted Probabilities:* Contain the predicted probabilities of the secondary structures for each of the residues. The file extension is ".ss8_probab".
 2. The predicted outout sequences will be saved in the following files in the "SAINT/outputs" folder:   
 
 	| Model-type | Pattern of output file-names (Predicted Classes) |  Pattern of output file-names (Predicted Probabilities) |
