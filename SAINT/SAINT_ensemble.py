@@ -810,6 +810,9 @@ def getProtlist(inputlist):
 protlist = getProtlist(inputlist=config.inputlist)
 print('\n\nTotal number of proteins:', len(protlist))
 
+if len(protlist) != len(ss8_probab):
+    raise Exception
+
 for i, prot_name in enumerate(protlist):
     with open('outputs//{}.SAINT_Ensemble.ss8'.format(prot_name), 'w') as f:
         f.write(ss8_string[i])
