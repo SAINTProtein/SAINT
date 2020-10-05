@@ -537,6 +537,7 @@ ss8_win0_string = ''
 greater_than_700_dict = lengths[0][2]
 skip_cnt = 0
 
+ss8_win0_probab = []
 for i in range(ss8_win0.shape[0]):
     if i in greater_than_700_dict:
         if greater_than_700_dict[i][1] >= 1400:
@@ -546,6 +547,8 @@ for i in range(ss8_win0.shape[0]):
         temp_ss8_win0 = np.zeros([greater_than_700_dict[i][1], ss8_win0.shape[2]])
         temp_ss8_win0[:700, :] = ss8_win0[i]
         temp_ss8_win0[-700:, :] += ss8_win0[i + 1]
+        temp_ss8_win0[-700:700, :] /= 2
+        ss8_win0_probab += [temp_ss8_win0]
         temp_ss8_win0 = np.argmax(temp_ss8_win0, axis=-1)
         print('temp_ss8_win0.shape:', temp_ss8_win0.shape)
         for j in range(temp_ss8_win0.shape[0]):
@@ -561,6 +564,7 @@ for i in range(ss8_win0.shape[0]):
 
     for j in range(int(lengths[0][0][i])):
         ss8_win0_string += _structures_[ss8_win0_[i, j]]
+    ss8_win0_probab += [ss8_win0[i]]
     ss8_win0_string += '\n'
 
 """
@@ -582,6 +586,7 @@ protlist = getProtlist(inputlist=config.inputlist)
 for i, prot_name in enumerate(protlist):
     with open('outputs/{}.SAINT_cwin0.ss8'.format(prot_name), 'w') as f:
         f.write(ss8_win0_string[i])
+    np.savetxt('outputs/{}.SAINT_cwin0.ss8_probab'.format(prot_name), ss8_win0_probab[i])
 
 
 print('Total time for script (SAINT_single_base):', time() - t_init)
