@@ -47,7 +47,7 @@ To store input-features, navigate to the folder SAINT. Then follow any of the fo
 	|*Contact Window size 10*| *<Protein_Name>*.SAINT_cwin10.ss8   | *<Protein_Name>*.SAINT_cwin10.ss8_probab   |
 	|*Contact Window size 20*| *<Protein_Name>*.SAINT_cwin20.ss8   | *<Protein_Name>*.SAINT_cwin20.ss8_probab   |
 	|*Contact Window size 50*| *<Protein_Name>*.SAINT_cwin50.ss8  | *<Protein_Name>*.SAINT_cwin50.ss8_probab  |
- 3. In the above table, *<Protein_Name>* indicates the protein names given in file named *list_test*. Output files will be generated for all the proteins listed in this file. 
+ 3. In the above table, *<Protein_Name>* indicates the protein names given in file named *"list_test"*. Output files will be generated for all the proteins listed in this *"list_test"* file. 
  4. The characters in the output files of predicted sequences represent the eight states (Q8) as shown in the following table: 
  
  	|Character | State|
