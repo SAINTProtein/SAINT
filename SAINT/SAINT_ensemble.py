@@ -764,11 +764,11 @@ for i in range(avg.shape[0]):
         ss8_win20_string += _structures_[ss8_win20_[i, j]]
         ss8_win50_string += _structures_[ss8_win50_[i, j]]
     
-    ss8_probab += [avg[i]]
-    ss8_win0_probab += [ss8_win0[i]]
-    ss8_win10_probab += [ss8_win10[i]]
-    ss8_win20_probab += [ss8_win20[i]]
-    ss8_win50_probab += [ss8_win50[i]]
+    ss8_probab += [avg[i][:int(lengths[0][0][i])]] #..
+    ss8_win0_probab += [ss8_win0[i][:int(lengths[0][0][i])]] #..
+    ss8_win10_probab += [ss8_win10[i][:int(lengths[0][0][i])]] #..
+    ss8_win20_probab += [ss8_win20[i][:int(lengths[0][0][i])]] #..
+    ss8_win50_probab += [ss8_win50[i][:int(lengths[0][0][i])]] #..
     
     ss8_string += '\n'
     ss8_win0_string += '\n'
