@@ -552,6 +552,7 @@ for i in range(ss8_win0.shape[0]):
         temp_ss8_win0 = np.argmax(temp_ss8_win0, axis=-1)
         print('temp_ss8_win0.shape:', temp_ss8_win0.shape)
         for j in range(temp_ss8_win0.shape[0]):
+#         for j in range(greater_than_700_dict[i][1]):
             ss8_win0_string += _structures_[temp_ss8_win0[j]]
         ss8_win0_string += '\n'
 
@@ -564,7 +565,7 @@ for i in range(ss8_win0.shape[0]):
 
     for j in range(int(lengths[0][0][i])):
         ss8_win0_string += _structures_[ss8_win0_[i, j]]
-    ss8_win0_probab += [ss8_win0[i]]
+    ss8_win0_probab += [ss8_win0[i][:int(lengths[0][0][i])]] #..
     ss8_win0_string += '\n'
 
 """
