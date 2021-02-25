@@ -62,4 +62,23 @@ To store input-features, navigate to the folder SAINT. Then follow any of the fo
 	|C| Others |
 	
 # Citation
-Mostofa Rafid Uddin, Sazan Mahbub, M Saifur Rahman, Md Shamsuzzoha Bayzid, SAINT: Self-Attention Augmented Inception-Inside-Inception Network Improves Protein Secondary Structure Prediction, Bioinformatics, , btaa531, https://doi.org/10.1093/bioinformatics/btaa531
+Mostofa Rafid Uddin, Sazan Mahbub, M Saifur Rahman, Md Shamsuzzoha Bayzid, SAINT: self-attention augmented inception-inside-inception network improves protein secondary structure prediction, Bioinformatics, Volume 36, Issue 17, 1 September 2020, Pages 4599–4608, https://doi.org/10.1093/bioinformatics/btaa531
+
+## BibTeX
+```
+@article{10.1093/bioinformatics/btaa531,
+    author = {Uddin, Mostofa Rafid and Mahbub, Sazan and Rahman, M Saifur and Bayzid, Md Shamsuzzoha},
+    title = "{SAINT: self-attention augmented inception-inside-inception network improves protein secondary structure prediction}",
+    journal = {Bioinformatics},
+    volume = {36},
+    number = {17},
+    pages = {4599-4608},
+    year = {2020},
+    month = {05},
+    abstract = "{Protein structures provide basic insight into how they can interact with other proteins, their functions and biological roles in an organism. Experimental methods (e.g. X-ray crystallography and nuclear magnetic resonance spectroscopy) for predicting the secondary structure (SS) of proteins are very expensive and time consuming. Therefore, developing efficient computational approaches for predicting the SS of protein is of utmost importance. Advances in developing highly accurate SS prediction methods have mostly been focused on 3-class (Q3) structure prediction. However, 8-class (Q8) resolution of SS contains more useful information and is much more challenging than the Q3 prediction.We present SAINT, a highly accurate method for Q8 structure prediction, which incorporates self-attention mechanism (a concept from natural language processing) with the Deep Inception-Inside-Inception network in order to effectively capture both the short- and long-range interactions among the amino acid residues. SAINT offers a more interpretable framework than the typical black-box deep neural network methods. Through an extensive evaluation study, we report the performance of SAINT in comparison with the existing best methods on a collection of benchmark datasets, namely, TEST2016, TEST2018, CASP12 and CASP13. Our results suggest that self-attention mechanism improves the prediction accuracy and outperforms the existing best alternate methods. SAINT is the first of its kind and offers the best known Q8 accuracy. Thus, we believe SAINT represents a major step toward the accurate and reliable prediction of SSs of proteins.SAINT is freely available as an open-source project at https://github.com/SAINTProtein/SAINT.}",
+    issn = {1367-4803},
+    doi = {10.1093/bioinformatics/btaa531},
+    url = {https://doi.org/10.1093/bioinformatics/btaa531},
+    eprint = {https://academic.oup.com/bioinformatics/article-pdf/36/17/4599/34220682/btaa531.pdf},
+}
+```
