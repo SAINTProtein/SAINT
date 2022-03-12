@@ -1,8 +1,8 @@
 
 # SAINT
-This repository contains the official implementation of our paper *"**SAINT**: **S**elf-**A**ttention Augmented **I**nception-Inside-Inception **N**e**t**work Improves Protein Secondary Structure Prediction."*
+This repository contains the official implementation of our paper [***SAINT**: **S**elf-**A**ttention Augmented **I**nception-Inside-Inception **N**e**t**work Improves Protein Secondary Structure Prediction.*](https://doi.org/10.1093/bioinformatics/btaa531) published in the journal [Bioinformatics](https://doi.org/10.1093/bioinformatics/btaa531). 
 
-If you use any part of this repository, we shall be obliged if you site our paper [**SAINT**: **S**elf-**A**ttention Augmented **I**nception-Inside-Inception **N**e**t**work Improves Protein Secondary Structure Prediction](https://doi.org/10.1093/bioinformatics/btaa531).
+If you use any part of this repository, we shall be obliged if you site [our paper](https://doi.org/10.1093/bioinformatics/btaa531).
 
 # Usage
 ## Tensorflow and Keras installation
