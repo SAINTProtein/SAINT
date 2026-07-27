@@ -65,7 +65,7 @@ To store input-features, navigate to the folder SAINT. Then follow any of the fo
 Mostofa Rafid Uddin, Sazan Mahbub, M Saifur Rahman, Md Shamsuzzoha Bayzid, SAINT: self-attention augmented inception-inside-inception network improves protein secondary structure prediction, Bioinformatics, Volume 36, Issue 17, 1 September 2020, Pages 4599–4608, https://doi.org/10.1093/bioinformatics/btaa531
 
 ## BibTeX
-```
+```bibtex
 @article{10.1093/bioinformatics/btaa531,
     author = {Uddin, Mostofa Rafid and Mahbub, Sazan and Rahman, M Saifur and Bayzid, Md Shamsuzzoha},
     title = "{SAINT: self-attention augmented inception-inside-inception network improves protein secondary structure prediction}",
